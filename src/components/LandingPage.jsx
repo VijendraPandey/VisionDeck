@@ -27,7 +27,7 @@ const LandingPage = () => {
           "From the first pitch to IPO",
         ].map((item, index) => {
           return (
-            <p className="text-md font-light tracking-tight leading-none">
+            <p className="text-md font-light tracking-tight leading-none" key={index}>
               {item}
             </p>
           );
