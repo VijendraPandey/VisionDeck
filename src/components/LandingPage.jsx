@@ -1,16 +1,24 @@
+import { motion } from "framer-motion";
 import React from "react";
 import { FaArrowUpLong } from "react-icons/fa6";
 
 const LandingPage = () => {
   return (
-    <div className="w-full h-screen bg-zinc-900 pt-1">
+    <div data-scroll data-scroll-section data-scroll-speed="-.3" className="w-full h-screen bg-zinc-900 pt-1">
       <div className="textstructure mt-40 px-20">
         {["We Create", "Eye Opening", "Presentations"].map((item, index) => {
           return (
             <div className="masker" key={index}>
               <div className="w-fit flex items-end overflow-hidden">
                 {index == 1 && (
-                  <img className="ml-[0.4vw] mr-[0.5vw] w-[6.2vw] h-[4.2vw] rounded-md relative -top-[0.3vw] object-cover" src="https://ochi.design/wp-content/uploads/2022/04/content-image01.jpg" alt="" />
+                  <motion.img
+                    initial={{ width: 0 }}
+                    animate={{ width: "6.2vw" }}
+                    transition={{ ease: [0.76, 0, 0.24, 1], duration: 1 }}
+                    className="ml-[0.4vw] mr-[0.5vw] w-[6.2vw] h-[4.2vw] rounded-md relative -top-[0.3vw] object-cover"
+                    src="https://ochi.design/wp-content/uploads/2022/04/content-image01.jpg"
+                    alt=""
+                  />
                 )}
                 <h1 className="uppercase text-[6vw] leading-[5.5vw] tracking-tighter font-bold">
                   {item}
@@ -27,7 +35,10 @@ const LandingPage = () => {
           "From the first pitch to IPO",
         ].map((item, index) => {
           return (
-            <p className="text-md font-light tracking-tight leading-none" key={index}>
+            <p
+              className="text-md font-light tracking-tight leading-none"
+              key={index}
+            >
               {item}
             </p>
           );
